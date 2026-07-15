@@ -1,12 +1,4 @@
 
-{{
-    config(
-        materialized = 'view'
-    )
-}} 
-# Esto es un MACRO que se usa para definir que quiero que este model sea una VIEW
-# Aunque en dbt_proyect.jml dice que globalmente ahora van a ser tables los models.
-
 
 with customers as (
 

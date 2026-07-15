@@ -34,7 +34,11 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   jaffle_shop:
-    +materialized: table
-    +static_analysis: strict
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
 
-# +materialized: view nos convierte los models a view cuando los ejecuta en BiugQuery.    
+
+# staging: view -> porque quiero que esten up to date
+# marts: table -> porque van a estar exposed en BI layer. Entonces puedo hacerle queries directo.   
